@@ -17,7 +17,7 @@ export const startLoginWithEmailAndPassword = (email, password) => {
       const payload = await loginWithEmailAndPassword(email, password);
       dispatch(loginSuccess(payload));
     } catch (error) {
-      console.log("entra al error login");
+      console.log(error);
       dispatch(loginFailure(error));
     }
   };
@@ -29,7 +29,7 @@ export const startLogout = () => {
       await logout();
       dispatch(logoutSuccess());
     } catch (error) {
-      console.log(error, "error startLogout");
+      console.log(error);
       dispatch(loginFailure(error));
     }
   };
@@ -41,7 +41,7 @@ export const startSessionValidate = () => {
       const payload = await getUserInformation();
       dispatch(loginSuccess(payload));
     } catch (error) {
-      console.log("entra al error startSessionValidate");
+      console.log(error);
       dispatch(loginFailure(error));
     }
   };
